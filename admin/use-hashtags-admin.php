@@ -131,7 +131,6 @@ add_action( 'admin_init', 'use_hashtags_register_setting', 'use_hashtags_validat
 function use_hashtags_validate( $input ) {
 	$input['use_hashtags_in_content']   = filter_var( $input['use_hashtags_in_content'], FILTER_VALIDATE_BOOLEAN );
 	$input['use_hashtags_in_excerpt']   = filter_var( $input['use_hashtags_in_excerpt'], FILTER_VALIDATE_BOOLEAN );
-	$input['use_hashtags_link']         = sanitize_text_field( $input['use_hashtags_link'] );
 	$input['use_hashtags_link_qualify'] = sanitize_text_field( $input['use_hashtags_link_qualify'] );
 	$input['use_hashtags_link_target']  = sanitize_text_field( $input['use_hashtags_link_target'] );
 
@@ -185,10 +184,8 @@ function use_hashtags_form_link_url() {
 	$options_r = (array) get_option( 'use_hashtags_options' );
 
 	printf(
-		'<code>%s/</code><input type="text" id="linkurl" ' .
-		'name="use_hashtags_options[use_hashtags_link]" value="%s" /><code>#hashtag</code>',
-		home_url(),
-		esc_attr( $options_r['use_hashtags_link'] )
+		'<code>%s/?s=#hashtag</code>',
+		home_url()
 	);
 }
 
