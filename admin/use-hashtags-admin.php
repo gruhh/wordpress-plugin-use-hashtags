@@ -187,7 +187,7 @@ function use_hashtags_form_link_url() {
 	printf(
 		'<code>%s/</code><input type="text" id="linkurl" ' .
 		'name="use_hashtags_options[use_hashtags_link]" value="%s" /><code>#hashtag</code>',
-		site_url(),
+		home_url(),
 		esc_attr( $options_r['use_hashtags_link'] )
 	);
 }
