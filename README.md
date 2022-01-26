@@ -8,10 +8,11 @@ The link directs the user to the site’s search page (in addition to generating
 
 The purpose of the plugin is to improve the user experience, as it creates a new navigation layer within the content.
 
-* There is no need to keep hashtags, just add them to the text, and you’re done.
-* This plugin is non-destructive, so it does not make any changes to the way your content is saved. Only when the content is displayed, the link will appear to the visitors.
-* This plugin does not generate external links.
-* Tested with some of the most popular themes.
+- There is no need to keep hashtags, just add them to the text, and you’re done.
+- This plugin is non-destructive, so it does not make any changes to the way your content is saved. Only when the content is displayed, the link will appear to the visitors.
+- This plugin does not generate external links.
+- Tested with some of the most popular themes.
+- Tested with selected core blocks.
 
 ![Tested WordPress Version](https://img.shields.io/wordpress/plugin/tested/use-hashtags)
 ![Plugin Version](https://img.shields.io/wordpress/plugin/v/use-hashtags)

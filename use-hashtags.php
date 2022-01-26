@@ -4,7 +4,7 @@
  * Plugin Name: Use Hashtags
  * Plugin URI: https://gruhh.com/en/projects/wordpress-plugin-use-hashtags/
  * Description: Convert all the #hashtags in your content and excerpts to a search link.
- * Version: 1.0.3
+ * Version: 1.0.5
  * Author: gruhh
  * Author URI: https://gruhh.com/
  * License: GPL v2 or later
@@ -80,11 +80,32 @@ function use_hashtags_in_excerpt( $content ) {
 add_filter( 'the_excerpt', 'use_hashtags_in_excerpt', 5, 1 );
 
 /**
+ * Add a filter to use hashtags in core blocks.
+ */
+function use_hashtags_in_blocks( $content, $block ) {
+	$options_r = get_option( 'use_hashtags_options' );
+
+	if ( 'core/post-content' === $block['blockName'] ) {
+		if ( $options_r['use_hashtags_in_content'] && is_main_query() ) {
+			return use_hashtags_convert_hashtags_to_links( $content );
+		}
+	} else if ( 'core/post-excerpt' !== $block['blockName'] ) {
+		if ( $options_r['use_hashtags_in_excerpt'] && is_main_query() ) {
+			return use_hashtags_convert_hashtags_to_links( $content );
+		}
+	}
+
+	return $content;
+}
+
+add_filter( 'render_block', 'use_hashtags_in_blocks', 10, 2 );
+
+/**
  * Search for hashtags and replace then with a link.
  */
 function use_hashtags_convert_hashtags_to_links( $content ) {
 	$options_r        = get_option( 'use_hashtags_options' );
-	$regex            = "(?<=[\s\n\r\\>])#(\w+)";
+	$regex            = "(?<=[\s\n\r\\ ])#(\w+)";
 	$site_url         = home_url();
 	$link_qualify     = $options_r['use_hashtags_link_qualify'];
 	$link_target      = $options_r['use_hashtags_link_target'];

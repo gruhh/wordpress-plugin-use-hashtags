@@ -2,8 +2,8 @@
 Contributors: gruhh
 Tags: hashtags, user experience, ux, navigation
 Requires at least: 5.0
-Tested up to: 5.8
-Stable tag: 1.0.4
+Tested up to: 5.9
+Stable tag: 1.0.5
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -21,10 +21,12 @@ This can enhance the user experience, as it creates a new navigation layer insid
 * There is no need to maintain the hashtags, just add them to your text, and it's done.
 * This plugin is non-destructive, so it does not make any changes to how your content is saved. Only when the content is presented, the link will appear for the visitors.
 * This plugin does not generate external links.
+- Tested with selected core blocks.
 
 **Tested with popular themes:**
 
-* [Twenty Twenty theme](https://wordpress.org/themes/twentytwenty/).
+* [Twenty Twenty Two theme](https://wordpress.org/themes/twentytwentytwo/).
+* [Twenty Twenty One theme](https://wordpress.org/themes/twentytwentyone/).
 * [GeneratePress theme](https://wordpress.org/themes/generatepress/).
 * [Neve theme](https://wordpress.org/themes/neve/).
 * [Hello Elementor theme](https://wordpress.org/themes/hello-elementor/).
@@ -69,6 +71,11 @@ Example: `a.hashtag-link { text weight: bold; }`
 5. Simple settings.
 
 == Changelog ==
+
+= 1.0.5 (2022-01-26) =
+* Updated to Wordpress 5.9.
+* Added support to core/post-content and core/post-excerpt blocks.
+* Updated the regex rule.
 
 = 1.0.4 (2021-07-25) =
 * Updated to Wordpress 5.8.
