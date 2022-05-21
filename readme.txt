@@ -2,8 +2,8 @@
 Contributors: gruhh
 Tags: hashtags, user experience, ux, navigation
 Requires at least: 5.0
-Tested up to: 5.9
-Stable tag: 1.0.5
+Tested up to: 6.0
+Stable tag: 1.1.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -54,7 +54,7 @@ We do not change the way your content is saved, only how it is rendered for visi
 
 = Which characters are considered on a hashtag? =
 
-For now, `A-Z`, `a-z`, `0-9` and `_`.
+For now, `A-Z`, `a-z`, `0-9`, `_`, `-`, `*`, `@` and `/`.
 
 = Can I style the links? =
 
@@ -71,6 +71,10 @@ Example: `a.hashtag-link { text weight: bold; }`
 5. Simple settings.
 
 == Changelog ==
+
+= 1.1.0 (2022-05-21) =
+* Updated to Wordpress 6.0.
+* Updated the regex rule, added the possibility to use -, /, @, * as part of a hashtag
 
 = 1.0.5 (2022-01-26) =
 * Updated to Wordpress 5.9.

@@ -4,7 +4,7 @@
  * Plugin Name: Use Hashtags
  * Plugin URI: https://gruhh.com/en/projects/wordpress-plugin-use-hashtags/
  * Description: Convert all the #hashtags in your content and excerpts to a search link.
- * Version: 1.0.5
+ * Version: 1.1.0
  * Author: gruhh
  * Author URI: https://gruhh.com/
  * License: GPL v2 or later
@@ -105,7 +105,7 @@ add_filter( 'render_block', 'use_hashtags_in_blocks', 10, 2 );
  */
 function use_hashtags_convert_hashtags_to_links( $content ) {
 	$options_r        = get_option( 'use_hashtags_options' );
-	$regex            = "(?<=[\s\n\r\\ ])#(\w+)";
+	$regex            = "(?<=[\s\n\r\\ ])#([\w\-\*\@\/]+)";
 	$site_url         = home_url();
 	$link_qualify     = $options_r['use_hashtags_link_qualify'];
 	$link_target      = $options_r['use_hashtags_link_target'];
